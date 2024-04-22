@@ -1,0 +1,90 @@
+CREATE TABLE IF NOT EXISTS "order_invoice_data" (
+	"order_no"	varchar(20) NOT NULL,
+	"inv_period"	char(6) NOT NULL,
+	"inv_no"	char(10) NOT NULL,
+	"cust_ein"	varchar(8),
+	"donate_flag"	char(1) DEFAULT 'N',
+	"donate_code"	varchar(20),
+	"carrier_type"	varchar(20),
+	"carrier_code_1"	varchar(64),
+	"carrier_code_2"	varchar(64),
+	"batch_num"	int NOT NULL,
+	"random_code"	char(4) NOT NULL,
+	"qrcode_aes_key"	varchar(32),
+	PRIMARY KEY("order_no","inv_period","inv_no")
+);
+CREATE TABLE IF NOT EXISTS "printer_data" (
+	"SID"	int NOT NULL,
+	"printer_code"	varchar(50) NOT NULL,
+	"printer_name"	varchar(50) NOT NULL,
+	"output_type"	char(1) NOT NULL,
+	"stop_flag"	char(1) DEFAULT 'N',
+	"stop_time"	datetime,
+	"del_flag"	char(1) DEFAULT 'N',
+	"del_time"	datetime,
+	"created_time"	timestamp,
+	"updated_time"	timestamp,
+	"template_type"	varchar(20) DEFAULT null,
+	"template_sid"	varchar(64) DEFAULT null,
+	PRIMARY KEY("SID")
+);
+CREATE TABLE IF NOT EXISTS "company_invoice_params" (
+	"company_sid"	int NOT NULL,
+	"platform_sid"	int NOT NULL,
+	"env_type"	char(1) NOT NULL,
+	"active_state"	char(1) NOT NULL DEFAULT 'N',
+	"branch_no"	varchar(30),
+	"reg_id"	varchar(64),
+	"qrcode_aes_key"	varchar(32),
+	"inv_renew_count"	int DEFAULT 0,
+	"booklet"	int DEFAULT 0,
+	"auth_account"	varchar(50),
+	"auth_password"	varchar(50),
+	"created_time"	timestamp DEFAULT CURRENT_TIMESTAMP,
+	"updated_time"	timestamp DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY("company_sid")
+);
+CREATE TABLE IF NOT EXISTS "company_payment_type" (
+	"SID"	int NOT NULL,
+	"payment_code"	varchar(20),
+	"payment_name"	varchar(30),
+	"payment_module_code"	varchar(50),
+	"def_paid_flag"	char(1) DEFAULT 'N',
+	"def_paid_amount"	decimal(10, 2) DEFAULT 0,
+	"no_change_flag"	char(1) DEFAULT 'N',
+	"del_flag"	char(1) DEFAULT 'N',
+	"del_time"	datetime,
+	"stop_flag"	char(1),
+	"stop_time"	datetime,
+	"sort"	int DEFAULT 0,
+	"created_time"	timestamp,
+	"updated_time"	timestamp,
+	PRIMARY KEY("SID")
+);
+CREATE TABLE IF NOT EXISTS "company_payment_type" (
+	"SID"	int NOT NULL,
+	"payment_code"	varchar(20),
+	"payment_name"	varchar(30),
+	"payment_module_code"	varchar(50),
+	"def_paid_flag"	char(1) DEFAULT 'N',
+	"def_paid_amount"	decimal(10, 2) DEFAULT 0,
+	"no_change_flag"	char(1) DEFAULT 'N',
+	"del_flag"	char(1) DEFAULT 'N',
+	"del_time"	datetime,
+	"stop_flag"	char(1),
+	"stop_time"	datetime,
+	"sort"	int DEFAULT 0,
+	"created_time"	timestamp,
+	"updated_time"	timestamp,
+	PRIMARY KEY("SID")
+);
+CREATE TABLE IF NOT EXISTS "company_payment_params" (
+	"payment_sid"	int NOT NULL,
+	"active_state"	char(1) NOT NULL,
+	"env_type"	char(1) NOT NULL,
+	"client_id"	varchar(100),
+	"client_secret"	varchar(100),
+	"created_time"	timestamp,
+	"updated_time"	timestamp,
+	PRIMARY KEY("payment_sid")
+);
