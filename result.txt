@@ -1,9 +1,9 @@
 now 比 me 多的欄位紀錄
 
 "user_data"
-	"sort"	integer DEFAULT 0,
+	"sort"	integer DEFAULT 0, 同步資料要對應
 	
-"order_payment_data"
+"order_payment_data" 確認支付文件 線上API[http://192.168.1.15:8180]
 	"coin_discount"	decimal(10, 2) DEFAULT 0,
 	"points_discount"	decimal(10, 2) DEFAULT 0,
 
@@ -13,14 +13,14 @@ now 比 me 多的欄位紀錄
 "terminal_data"	
 	"use_call_num_date"	char(8),
 
-"order_invoice_data"
+"order_invoice_data" 發票註銷流程相關
 	"platform_code"	varchar(30),
 
 "company_invoice_params"
 	"params"	TEXT,
 	"platform_name"	varchar(100),
 
-CREATE TABLE IF NOT EXISTS "modules_data" (
+CREATE TABLE IF NOT EXISTS "modules_data" ( 掃碼點單 會員平台 KDS
 	"module_code"	varchar(30) NOT NULL,
 	"module_params"	text,
 	"active_flag"	char(1) DEFAULT 'N',

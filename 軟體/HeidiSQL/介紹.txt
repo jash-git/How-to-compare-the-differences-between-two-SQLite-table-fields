@@ -1,0 +1,13 @@
+Windows所有SQL的GUI連線編輯管理軟體工具(TOOL) [HeidiSQL] 
+
+資料來源: https://www.heidisql.com/
+
+免安裝: https://www.heidisql.com/download.php
+https://www.azofreeware.com/2021/06/heidisql.html
+
+原文介紹:
+	HeidiSQL is free software, and has the aim to be easy to learn. "Heidi" lets you see and edit data and structures from computers running one of the database systems MariaDB, MySQL, Microsoft SQL, PostgreSQL and SQLite. Invented in 2002 by Ansgar, HeidiSQL belongs to the most popular tools for MariaDB and MySQL worldwide.
+
+翻譯中文:
+	HeidiSQL 是免費軟體，目標是易於學習。 「Heidi」可讓您檢視和編輯執行資料庫系統 MariaDB、MySQL、Microsoft SQL、PostgreSQL 和 SQLite 之一的電腦中的資料和結構。 HeidiSQL 由 Ansgar 於 2002 年發明，屬於全球最受歡迎的 MariaDB 和 MySQL 工具。
+	
